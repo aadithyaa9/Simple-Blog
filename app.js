@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import blogRoutes from "./routes/blogRoutes.js";
+import blogroutes from "./routes/blogroutes.js";
 
 const app = express();
 const port = 3000;

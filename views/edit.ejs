@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit POST</title>
+    <title>Edit Post</title>
 </head>
 <body>
-    <form action = "/update/<%= post.id%>" method="POST">
-        <input type = "text" name = "title" value = "<%= post.title %>" required>
-        <textarea name = "content" required><%= post.content %></textarea>
-        <button type = "submit" >update</button>   </form>
+    <h1>Edit Post</h1>
+    <% if (post) { %>
+        <form action="/update/<%= post.id %>" method="POST">
+            <input type="text" name="title" value="<%= post.title %>" required>
+            <textarea name="content" required><%= post.content %></textarea>
+            <button type="submit">Update</button>
+        </form>
+    <% } else { %>
+        <p>Post not found.</p>
+    <% } %>
+    <a href="/">Back to Home</a>
 </body>
 </html>

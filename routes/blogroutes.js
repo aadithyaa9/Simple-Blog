@@ -1,16 +1,13 @@
 import express from "express";
-import { getEditPost , getHome , getNewPost ,deletePost, addPost, updatePost } from "../controllers/blogcontrollers";
-import bodyParser from "body-parser";
-
+import { getHome, getNewPost, getEditPost, addPost, updatePost, deletePost } from "../controllers/blogcontrollers.js";
 
 const router = express.Router();
 
-
-router.get("/" ,getHome);
-router.post("/add" , addPost);
-router.get("/new" , getNewPost);
-router.get("/edit/:id" , getEditPost);
-router.get("/update/:id" , updatePost);
-router.get("/delete/:id" , deletePost);
+router.get("/", getHome);
+router.get("/new", getNewPost);
+router.post("/add", addPost);
+router.get("/edit/:id", getEditPost);
+router.post("/update/:id", updatePost);
+router.post("/delete/:id", deletePost); 
 
 export default router;
